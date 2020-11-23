@@ -15,3 +15,11 @@ const tomorrowDate = ()=>{
 }
 
 tomorrowDate();
+
+start.addEventListener('change', (e) => {
+    let day = new Date(e.target.value);
+    day.setDate(day.getDate()+1);
+    let tomorrow = day.toISOString().split('T')[0];
+    end.min = tomorrow;
+    end.value = tomorrow;
+})
